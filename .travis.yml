@@ -1,2 +1,9 @@
 language: node_js
 node_js: node
+deploy:
+  provider: heroku
+  api_key:
+    secure: 2vMen9MuHW6hwC/fl4wMwpPbEYMFujnTDfi7WsTRUrLzKidLVg+ePsmTyn4YsgLhiBXubE1gZ9tP4XSfi6fw63Wm8E0FcP4rGd/oihEisFwFRPiS8vt5DdTgoe3IwRwwlQ9DUs4NuO/lY2pUTT/iu4f5n8Hnybkpt/OMG4OIzhYUAf/ijybt5WGUEZ4ljzm7GrGjANiAxrTbcoOswaUCGOTdabcnlS+N0ohlXZL7W0qNSBa8MKcK2iuIc3OclvLOffVMvD4QZwXfRB5E6T7+tlrt1jKnb+VOR7Zvs+keGarjJb4h/iCRgNzmn34M5DI43VLnnYxpCLvVXLupkXhY1xRiU3+rO5isb6PF1nOO4JOo9K0szmxT2O/3jSJsEtU22wWV/O97IfU/71TxvSQdHzza7Krllu/m0nM3Ykr/Qo6c3NYib0pbobO5tLp7K6wViT7fxj1BmlzgIior8gRiZVf7aQkiC0AVJxun31klNaiSGJwNVCdrBSwc6T0ii22ixkPzyZScFDdMoWpA5s6zduU1ClaljMeeszPCuLcL2EpF1GSSlHJIq/ARQ0uVLgSRpNmPh+rkgM34p4LDDDyqL+W91wjrMuSXcdG2zHZNtV51LG2sL98HvGDtqb2FGMMN3fpKnW1EP2ShnIhjRAv4W+E1YjvmvUiL1BHxmx+c82Q=
+  app: gentle-thicket-79133
+  on:
+    repo: dafear/showup
