@@ -9,10 +9,18 @@
   "author": "Dhafir Fuller",
   "license": "ISC",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
+    "mongoose": "^4.9.9",
+    "morgan": "^1.8.1",
+    "passport": "^0.3.2",
+    "passport-http": "^0.3.0"
+  },
+  "devDependencies": {
     "chai": "^3.5.0",
     "chai-http": "^3.0.0",
-    "express": "^4.15.2",
-    "mocha": "^3.4.0"
-  },
-  "devDependencies": {}
+    "faker": "^4.1.0",
+    "mocha": "^3.4.1"
+  }
 }
