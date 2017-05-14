@@ -1,0 +1,31 @@
+var MOCK_SEARCH_FAVORITES = {
+	"searchFavorites": [
+        {
+            "URL": "1111111",
+            "name": "Can't believe how much fun I'm having.",
+            "address": "aaaaaa",
+            "city": "John Doe",
+        },
+        {
+            "URL": "2222222",
+            "name": "Have FOMO? Well you SHOULD!",
+            "address": "bbbbbbb",
+            "city": "Jane Doe",
+            "": 1470012976609
+        },
+        {
+            "URL": "333333",
+            "name": "They're giving out immortality and free $$$ where I am.",
+            "address": "cccc",
+            "city": "Jim Doe",
+           
+        },
+        {
+            "URL": "4444444",
+            "name": "humble brag humble brag humble brag",
+            "address": "ddddd",
+            "city": "Jackie Doe",
+           
+        }
+    ]
+};
