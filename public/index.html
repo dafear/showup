@@ -1,9 +1,46 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<title></title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="styles/main.css" />
+
+  <link rel="stylesheet" type="text/css" href="styles/normalize.css" />
+   <link rel="stylesheet" type="text/css" href="styles/demo.css" /> 
+  <title>Find Your Show Venue</title>
 </head>
+
 <body>
-<p>hello world</p>
+  <!-- <div class="background"></div> -->
+  <!-- <div class="page"> -->
+  <h1>Find a show in NYC</h1>
+  <p>(e.g. music, comedy, theater)</p>
+  <p>play around with related terms and get more results</p>
+  <form class="js-search-form">
+    <div style="text-align: center">
+
+      <label for="query"></label>
+      <input type="text" name="searchQuery" class="js-query" id="searchInput"></input><br>
+      <input id="trigger-overlay" id="submitBtn" type="submit" class="enableOnInput" disabled="disabled"></input>
+
+     <!-- <input type="button" value="Refresh Page" onclick=" window.location.reload()"></input> -->
+    </div>
+  </form>
+
+   <div class="overlay overlay-hugeinc"> 
+     <button type="button" class="overlay-close">Close</button> 
+     <button type="button" class="button-save">save search</button>
+    <div class="js-search-results">
+    </div>
+  <!-- </div> -->
+ </div>
+  <script src="js/modernizr.custom.js"></script> 
+  <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+  <script src="js/trigger.js"></script>
+  <script src="js/classie.js"></script> 
+  <script src="js/dafear.js"></script>
+  <script src="js/code7.js"></script> 
 </body>
+
 </html>
