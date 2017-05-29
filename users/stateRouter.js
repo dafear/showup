@@ -30,39 +30,29 @@ var musicVenuesUrl = "https://api.foursquare.com/v2/venues/search?client_id=RJOU
 
 
 router.post('/savedSearches', jsonParser, (req, res) => {
-  
-  // console.log('request.body', req.body.url,req.body.name,req.body.address,req.body.city);
- const requiredFields = ['url','name','address','city'];
-   for (let i=0; i<requiredFields.length; i++) {
-     const field = requiredFields[i];
-     if (!(field in req.body)) {
-       const message = `Missing \`${field}\` in request body`
-       console.error(message);
-       return res.status(400).send(message);
-      }
-   }
-   var venues = req.body['venues']; 
-   console.log(venues);
-
-
-
-   console.log('reach this');
-    console.log(req.body.name);
-
-     // const item = new Search({ url: req.body.url, name: req.body.name, address: req.body.address, city: req.body.city});
-    const item = new Search({ url:'music', name: 'me', address: 'anygyrth', city:'bnjdhi'});
-
-    item.save(function(err){
-      if (err){
-        console.log(err);
-        return res.json({});
-      } 
-       res.status(201).json(item);
+  const requiredFields = ['url','name','address','city'];
+    req.body.forEach(venue => {
+    const item = new Search({
+      url: venue.url,
+      name: venue.name,
+      address: venue.address,
+      city: venue.city
     });
-   // const item = Search.create(req.body.url, req.body.name, req.body.address, req.body.city);
-   
-});
 
+    item.save(function (err) {
+      console.log("SAVED!", item);
+    });
+  })
+});
+    
+   
+
+
+
+  
+
+
+  
 
 request(musicVenuesUrl, function(error, response, body) {
     if (!error && response.statuscode == 200) {

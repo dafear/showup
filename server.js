@@ -7,16 +7,11 @@ const path = require('path');
 const mongoose = require('mongoose');
 const http = require('http');
 
+app.use(bodyParser.json());
+
+mongoose.Promise = global.Promise;
 
 
-
-
-
-
-
- mongoose.Promise = global.Promise;
-
-const jsonParser = bodyParser.json();
  
 
 const stateRouter = require('./users/stateRouter.js');

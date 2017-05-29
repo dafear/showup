@@ -25,12 +25,12 @@ function filterVenues(musicVenues) {
   var contegrityID = ["4d4b7104d754a06370d81259","4bf58dd8d48988d1e5931735","4bf58dd8d48988d1e7931735","4bf58dd8d48988d1e8931735","4bf58dd8d48988d1e9931735","5267e4d9e4b0ec79466e48d1","4bf58dd8d48988d18e941735","4bf58dd8d48988d1f2931735","4bf58dd8d48988d137941735","5032792091d4c4b30a586d5c","507c8c4091d498d9fc8c67a9","4bf58dd8d48988d136941735","4bf58dd8d48988d135941735","4bf58dd8d48988d11f941735",]
  var music = musicVenues.response.venues.filter(function(venueItem) {
 
-venueItem.categories.forEach(function(category) {
-if (contegrityID.includes(category.id)) {
+   venueItem.categories.forEach(function(category) {
+   if (contegrityID.includes(category.id)) {
 
-places.push(venueItem);
- } 
-})
+      places.push(venueItem);
+    } 
+  })
 })
 state.venues = places
 displayMusicSearchData(places);
@@ -83,22 +83,36 @@ function watchSubmit() {
     getDataFromApi(searchterm, filterVenues);
   }
   
-
+  
   
    $('.button-save').click(function(e) {
     e.preventDefault();
+     
+     console.log("wth");
      console.log(state.venues);
-     console.log('state', state);
-     state.url = "music";
+
+    var places = [];
+    state.venues.forEach(venue => {
+      var record = {
+        name: venue.name,
+        address: venue.location.address,
+        city: venue.location.city,
+        url: venue.url
+      };
+
+      places.push(record);
+    });
+
+    console.log(places);
+
     $.ajax({
       url : "/savedSearches",
        type: "POST",
-       data: state,
-       // /data:JSON.stringify(state),
+       contentType: 'application/json; charset=utf-8',
        dataType: "json",
-       success: function(data, textStatus, jqXHR)
-       {
-        console.log("data", data)
+       data: JSON.stringify(places),
+       success: function(data, textStatus, jqXHR) {
+       console.log("data", data)
        
        },
        error: function (jqXHR, textStatus, errorThrown) {
