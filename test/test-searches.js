@@ -62,7 +62,9 @@ describe('Search', function() {
         // response should be deep equal to `newItem` from above if we assign
         // `id` to it from `res.body.id`
         //res.body.should.deep.equal(Object.assign(newSearch, {url: res.body.url}));
-      });
+      }).catch(function(error) {
+        console.log(error)
+      })
   });
 
   // test strategy:
@@ -104,9 +106,11 @@ describe('Search', function() {
         res.body.should.be.a('object');
         res.body.should.deep.equal(updateSearchData);
       }).catch(function(error) {
-        console.log('Put error', error)
+        console.log(error)
+      })//.catch(function(error) {
+        //console.log('Put error', error)
        
-      })
+      //})
   });
 
   // test strategy:
