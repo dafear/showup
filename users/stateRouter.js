@@ -11,12 +11,13 @@ const request = require('request');
 
 mongoose.Promise = global.Promise;
 
+//router.use(bodyParser.json());
 router.use(bodyParser.urlencoded({ extended: false, 
   parameterLimit: 1000000}));
 
 router.use(bodyParser.json());
  router.use(methodOverride());
-
+//router.use(morgan('common'));
 
 const {Search} = require('../users/models.js');
 

@@ -15,12 +15,13 @@ mongoose.Promise = global.Promise;
  
 
 const stateRouter = require('./users/stateRouter.js');
+const searchRouter = require('./users/searchRouter.js');
  const {PORT, DATABASE_URL} = require('./config');
 
 
 
-
 app.use('/', stateRouter);
+app.use('/', searchRouter);
  app.use(morgan('common'));
  app.use(express.static('public'));
 
@@ -33,6 +34,8 @@ app.get('/search' ,function (req, res) {
  console.log('hello',req.query.q)
  res.sendFile(path.join(__dirname + '/public/index.html'));
 });
+
+
 
 
 let server;

@@ -15,7 +15,9 @@
     "mongoose": "^4.9.9",
     "morgan": "^1.8.1",
     "passport": "^0.3.2",
-    "passport-http": "^0.3.0"
+    "passport-http": "^0.3.0",
+    "superagent": "^3.5.2",
+    "uuid": "^3.0.1"
   },
   "devDependencies": {
     "chai": "^3.5.0",
@@ -24,7 +26,8 @@
     "express": "^4.15.3",
     "faker": "^4.1.0",
     "method-override": "^2.3.9",
-    "mocha": "^3.4.1",
+    "mocha": "^3.4.2",
+    "nock": "^9.0.13",
     "request": "^2.81.0"
   }
 }
