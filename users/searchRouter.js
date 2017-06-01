@@ -47,7 +47,8 @@ const {Search} = require('../users/models.js');
 // //     // call the `.apiRepr` instance method we've created in
 // //     // models.js in order to only expose the data we want the API return.
      .then(searches => {
-        res.json(searches)
+      //console.log(searches);
+        res.status(200).json(searches)
         // searches: searches.map(
         //    (search) => search.apiRepr())
         // });
@@ -146,6 +147,8 @@ const toUpdate = {};
 const updateableFields = ['id', 'url', 'name', 'address', 'city'];
 
 
+
+
  router.put('/searches/:id', (req, res) => {
 //   // ensure that the id in the request path and the one in request body match
  console.log("i got here");
@@ -172,7 +175,7 @@ const updateableFields = ['id', 'url', 'name', 'address', 'city'];
  // // //     // all key/value pairs in toUpdate will be updated -- that's what `$set` does
         .findByIdAndUpdate(mongoose.Types.ObjectId(req.params.id), {$set: toUpdate})
          .exec()
-         .then(searches => res.status(200).end(JSON.stringify(req.body)))
+         .then(searches => res.status(200).send(req.body))
        .catch(err => {
         console.log(err);
         res.status(500).json({message: 'Internal server error'})
@@ -215,8 +218,12 @@ router.delete('/searches/:id', (req, res) => {
   .findByIdAndRemove(req.params.id)
  .exec()
   .then(searches => res.status(204).end())
-  .catch(err => res.status(500).json({message: 'Internal server error'}));
+  .catch(err => {
+     console.log(err);
+    res.status(500).json({message: 'Internal server error'});
+})
 });
+
 
 
 

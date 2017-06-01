@@ -35,7 +35,7 @@ describe('Search', function() {
         res.body.length.should.be.at.least(1);
         // each item should be an object with key/value pairs
         // for `id`, `name` and `checked`.
-        const expectedKeys = ['url', 'name', 'address'];
+        const expectedKeys = ['url', 'name', 'address', 'city'];
         res.body.forEach(function(item) {
           item.should.be.a('object');
           item.should.include.keys(expectedKeys);
@@ -86,7 +86,7 @@ describe('Search', function() {
 
      chai.request(app)
       // first have to get so we have an idea of object to update
-      .get('/searches/:id')
+      .get('/searches')
       .then(function(res) {
         updateSearchData.id = res.body[0].id;
         // this will return a promise whose value will be the response
@@ -95,7 +95,7 @@ describe('Search', function() {
         // returning a promise and chaining with `then`, but we find
         // this approach cleaner and easier to read and reason about.
          chai.request(app)
-          .put(`/searches/:id/${updateSearchData.id}`)
+          .put(`/searches/${updateSearchData.url.name.address.city}`)
           .send(updateSearchData);
       })
       // prove that the PUT request has right status code
@@ -121,15 +121,17 @@ describe('Search', function() {
      chai.request(app)
       // first have to get so we have an `id` of item
       // to delete
-      .get('/searches/:id')
+
+      .get('/searches')
       .then(function(res) {
+        //console.log(res);
          chai.request(app)
-          .delete(`/searches/:id/${res.body[0].id}`);
-      })
-      .then(function(res) {
-        res.should.have.status(204);
-      }).catch(function(error) {
-        console.log(error)
-      })
+          .delete(`/searches/${res.body[0]._id}`);
+    })
+        .then(function(res) {
+         res.should.have.status(204);
+       }).catch(function(error) {
+         console.log(error)
+       })
   });
 });
