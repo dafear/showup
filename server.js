@@ -44,7 +44,7 @@ let server;
 function runServer(databaseUrl=DATABASE_URL, port=PORT) {
 
   return new Promise((resolve, reject) => {
-    mongoose.connect(databaseUrl, err => {
+    mongoose.connect('mongodb://dafear:sidney12@ds155091.mlab.com:55091/showup', err => {
      
 
       if (err) {
