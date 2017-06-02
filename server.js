@@ -20,7 +20,7 @@ const {PORT, DATABASE_URL} = require('./config');
 
 
 
-app.use('/search', stateRouter);
+app.use('/', stateRouter);
 app.use('/', searchRouter);
 app.use(morgan('common'));
 app.use(express.static('public'));
@@ -30,7 +30,7 @@ app.use(express.static('public'));
 
 
 
-app.get('/', function (req, res) {
+app.get('/search', function (req, res) {
  console.log('hello',req.query.q)
  res.sendFile(path.join(__dirname + '/public/index.html'));
 });
