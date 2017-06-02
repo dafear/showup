@@ -20,7 +20,7 @@ const {PORT, DATABASE_URL} = require('./config');
 
 
 
-app.use('/', stateRouter);
+app.use('/searches', stateRouter);
 app.use('/', searchRouter);
 app.use(morgan('common'));
 app.use(express.static('public'));
