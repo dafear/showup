@@ -30,7 +30,7 @@ app.use(express.static('public'));
 
 
 
-app.get('/search' ,function (req, res) {
+app.get('/', function (req, res) {
  console.log('hello',req.query.q)
  res.sendFile(path.join(__dirname + '/public/index.html'));
 });
