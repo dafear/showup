@@ -11,13 +11,13 @@ const request = require('request');
 
 mongoose.Promise = global.Promise;
 
-//router.use(bodyParser.json());
+
 router.use(bodyParser.urlencoded({ extended: false, 
   parameterLimit: 1000000}));
 
 router.use(bodyParser.json());
  router.use(methodOverride());
-//router.use(morgan('common'));
+
 
 const {Search} = require('../users/models.js');
 
@@ -70,31 +70,7 @@ request(musicVenuesUrl, function(error, response, body) {
   });
 
 
-    // })
-  // }
-
-     
    
-            
-         
-        
-    
-
-
-
-// router.post('/savedSearches', function(req,res) {
-   // savedSearches({
-           // url : req.body.url,
-           // name : req.body.name,
-           // address : req.body.address,
-           // city : req.body.city,
-      // })
-      // .save(function(err, doc) {
-        // if(err) res.json(err);
-        // else res.send('Successfully inserted!');
-      // })
-   // });
-
 
 
 

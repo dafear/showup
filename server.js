@@ -16,20 +16,20 @@ mongoose.Promise = global.Promise;
 
 const stateRouter = require('./users/stateRouter.js');
 const searchRouter = require('./users/searchRouter.js');
- const {PORT, DATABASE_URL} = require('./config');
+const {PORT, DATABASE_URL} = require('./config');
 
 
 
 app.use('/', stateRouter);
 app.use('/', searchRouter);
- app.use(morgan('common'));
- app.use(express.static('public'));
+app.use(morgan('common'));
+app.use(express.static('public'));
 
 
 
 
 
-///app starting points are verbs like get, post, delete, put, patch updates what was there//
+
 app.get('/search' ,function (req, res) {
  console.log('hello',req.query.q)
  res.sendFile(path.join(__dirname + '/public/index.html'));
@@ -40,10 +40,10 @@ app.get('/search' ,function (req, res) {
 
 let server;
 
-// this function connects to our database, then starts the server
-function runServer(databaseUrl=DATABASE_URL, port=PORT) {
 
-  return new Promise((resolve, reject) => {
+   function runServer(databaseUrl=DATABASE_URL, port=PORT) {
+
+    return new Promise((resolve, reject) => {
     mongoose.connect('mongodb://dafear:sidney12@ds155091.mlab.com:55091/showup', err => {
      
 
@@ -78,7 +78,6 @@ function closeServer() {
 }
 
 if (require.main === module) {
-  // mongoose.createConnection("mongodb://dafear:sidney12@ds155091.mlab.com:55091/showup");
   
   setTimeout(function() {
 runServer().catch(err => console.error(err));
@@ -86,16 +85,7 @@ runServer().catch(err => console.error(err));
 };
 
 
-  // app.listen(process.env.PORT || 8080);
-
-  //app.listen(process.env.port || 8080, function (){ mongoose.connect('mongodb://localhost/showup'); });
-
-// var db = mongoose.connection;
-// db.once('open', function() {
- // console.log('hi');
-
- // runServer().catch(err => console.error(err));
-// });
+  
 
 module.exports = {app, runServer, closeServer};
 
