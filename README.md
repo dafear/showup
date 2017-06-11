@@ -6,7 +6,7 @@ I've included a screenshots of my main page and search page labled screen-shot.p
 
 ##This API works by first adding a search to the input then pressing the "savedSearches" button once the overlay is triggered. The saved searches can be seen in the users console. 
 
-##For example, (https://dafear.github.io/showup/public/?q=music), will trigger a search for music venues whose name match with "music"  or (https://dafear.github.io/showup/public/?q=theater), will trigger a search for theaters. Simply change the name "music" or "theater" to whatever venue you want and enjoy.
+##For example, (https://dafear.github.io/showup/public/?q=music), will trigger a search for music venues whose name match with "music"  or (https://dafear.github.io/showup/public/?q=theater), will trigger a search for theaters. Simply change the name "music" or "theater" to whatever venue you want and enjoy.  Also note that (https://dafear.github.io/showup/public/) will take you to the main area where you can enter your search.
 
 
 
