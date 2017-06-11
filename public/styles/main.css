@@ -5,9 +5,9 @@ html, body {
     height: 100%;
 }
 
-.overlay {
-  /*display: none;*/
-}
+/*.overlay {
+  display: none;
+}*/
 
 body {
   background: #000000;
@@ -29,7 +29,7 @@ body {
 
 
 
-input[type='text']
+/*input[type='text']
 button[type='submit'] {
 background: #fcfcfc;
 border: 2px solid #e7e7e7;
@@ -43,11 +43,35 @@ transition: opacity 0.4s;
 text-align: left;
 height: auto;
 
-}
+}*/
+
+
+ /*button[type='button'] {
+    color: blue;
+    font-weight: 500;
+    font-size: 16px;
+    text-align: center;
+    cursor: pointer;
+    margin-bottom: 0;
+    border-radius: 12px;
+    padding: 10px 20px;
+    letter-spacing: 2px;
+    margin-top: 12px;
+    border: none;
+    background-color: #0000FF;
+
+}*/
 
 
 
-  button[type='submit'] {
+
+
+
+
+
+
+
+  /*button[type='submit'] {
     color: white;
     background: #000000;
     border: 0;
@@ -58,9 +82,9 @@ height: auto;
     margin-bottom: 0;
     height: auto;
     margin-right: 15px;
-}
+}*/
 
-input[type="button"] {
+/*input[type="button"] {
   color: white;
     background: #000000;
     border: 0;
@@ -70,9 +94,68 @@ input[type="button"] {
     cursor: pointer;
     margin-bottom: 0;
     height: auto;
+}*/
+
+
+   input[type=submit]:enabled,
+   button:enabled {
+    color: white;
+    font-weight: 500;
+    font-size: 16px;
+    text-align: center;
+    cursor: pointer;
+    margin-bottom: 0;
+    border-radius: 12px;
+    padding: 10px 20px;
+    letter-spacing: 2px;
+    margin-top: 12px;
+    border: none;
+    background-color: #99c5ff;
+
+  }
+
+
+
+input[type=submit]:disabled,
+   button:disabled {
+    color: white;
+    font-weight: 500;
+    font-size: 16px;
+    text-align: center;
+    cursor: pointer;
+    margin-bottom: 0;
+    border-radius: 12px;
+    padding: 10px 20px;
+    letter-spacing: 2px;
+    margin-top: 12px;
+    border: none;
+    background-color: #edece9;
+
+  }
+
+
+
+#trigger-overlay:disabled {
+  background: #edece9;
+  color: #8E939A;
 }
 
-input[type=submit]:enabled,
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*input[type=submit]:enabled,
 button:enabled {
   color: white;
   background: #000000;
@@ -88,13 +171,13 @@ button:enabled {
   letter-spacing: 2px;
   margin-top: 12px;
 
-}
+}*/
 
-input[type=submit]:disabled,
+/*input[type=submit]:disabled,
 button:disabled {
-color: white;
+color: blue;
 background: #000000;
-border: 20;
+border: none;
 font-weight: 500;
 font-size: 12px;
 text-align: center;
@@ -106,7 +189,7 @@ padding: 10px;
 letter-spacing: 2px;
 margin-top: 12px;
 }
-  
+  */
 
 
 input {
